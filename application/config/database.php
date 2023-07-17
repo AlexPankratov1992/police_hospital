@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '192.168.2.106',
 	'username' => 'root',
-	'password' => '',
-	'database' => 'fmbrjngm_dmc',
+	'password' => '123456',
+	'database' => 'police_hospital',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

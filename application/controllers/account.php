@@ -46,6 +46,7 @@ class Account extends CI_Controller
     }
     $data['title'] = 'Login';
     $path = 'account/login';
+    print_r('here');
     if (isset($_GET['ajax']) && $_GET['ajax'] == true) {
       $this->load->view($path, $data);
     } else {
@@ -614,7 +615,7 @@ class Account extends CI_Controller
   public function logout()
   {
     $this->bitauth->logout();
-    redirect('home');
+    redirect('/');
   }
 
   /**

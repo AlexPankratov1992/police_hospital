@@ -352,7 +352,7 @@ class Bitauth
 
 				if($_key == 'roles')
 				{
-					$_value = $this->encrypt->encode($_value);
+					$_value = $this->encrypt->encrypt($_value);
 				}
 
 				$session_data[$this->_cookie_elem_prefix.$_key] = $_value;
@@ -383,7 +383,7 @@ class Bitauth
 			{
 				if($_key == 'roles')
 				{
-					$_value = $this->encrypt->decode($_value);
+					$_value = $this->encrypt->decrypt($_value);
 				}
 				
 				$this->$_key = $_value;
@@ -1557,7 +1557,7 @@ class Bitauth
 			{
 				$row->members = explode('|', $row->members);
 				//this part encrypts the roles but there was no decode in the other part while it was checking as mask
-				$row->roles = $this->encrypt->encode($row->roles); 
+				$row->roles = $this->encrypt->encrypt($row->roles); 
 				$ret[] = $row;
 			}
 
@@ -1624,7 +1624,7 @@ class Bitauth
 			foreach($result as $row)
 			{
 				$row->groups = explode('|', $row->groups);
-				//$row->roles = $this->encrypt->encode($row->roles);
+				//$row->roles = $this->encrypt->encrypt($row->roles);
 				$ret[] = $row;
 			}
 

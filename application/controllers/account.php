@@ -535,7 +535,7 @@ class Account extends CI_Controller
       $roles = $this->bitauth->get_roles();
       foreach ($roles as $_slug => $_desc) {
         //in this part was not a decode method which caused lots of problem. encode method was used in bitauth->get_groups()->$row->roles.
-        if ($this->bitauth->has_role($_slug, $this->encrypt->decode($group->roles), FALSE)) {
+        if ($this->bitauth->has_role($_slug, $this->encrypt->decrypt($group->roles), FALSE)) {
           $role_list[] = $_slug;
         }
       }
